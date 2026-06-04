@@ -8,16 +8,21 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=Tajawal:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="icon" type="image/png" href="../assets/images/luna-icon.png" />
+  <link rel="apple-touch-icon" href="../assets/images/luna-icon.png" />
 </head>
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand-mark" href="index.html">Luna</a>
+      <a class="logo-link" href="index.html">
+        <img class="logo-icon" src="../assets/images/luna-icon.png" alt="Luna" />
+        <span class="luna-wordmark luna-wordmark--nav">Luna</span>
+      </a>
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
@@ -35,34 +40,31 @@
 
   <main id="main">
     <section class="hero">
-      <div class="container">
-        <h1 class="hero__wordmark">Luna</h1>
-        <p class="hero__tagline">Chaque phase de toi.</p>
-        <p class="hero__subhead">Une compagne de santé féminine trilingue. Cycle, fertilité, grossesse, avec calme, honnêteté, toujours présente.</p>
-        <div class="badges">
-          <a class="badge" href="#notify">
-            <span class="badge__icon" aria-hidden="true">&#63743;</span>
-            <span class="badge__text">
-              <span class="badge__small">Bientôt sur</span>
-              <span class="badge__large">App Store</span>
-            </span>
-          </a>
-          <a class="badge" href="#notify">
-            <span class="badge__icon" aria-hidden="true">&#9658;</span>
-            <span class="badge__text">
-              <span class="badge__small">Bientôt sur</span>
-              <span class="badge__large">Google Play</span>
-            </span>
-          </a>
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">Chaque phase de toi</p>
+          <h1 class="hero__title">Une compagne santé féminine qui <em>écoute</em>, sans juger.</h1>
+          <p class="hero__subhead">Suivi de cycle, compagne IA et accompagnement grossesse, en trois langues. Conçue autour de ta vie privée.</p>
+          <div class="hero__cta">
+            <div class="store-badges">
+              <a href="#notify"><img class="store-badge" src="../assets/images/fr-app-store.png" alt="Bientôt disponible sur l'App Store" /></a>
+              <a href="#notify"><img class="store-badge" src="../assets/images/fr-google-play.png" alt="Bientôt disponible sur Google Play" /></a>
+            </div>
+          </div>
+        </div>
+        <div class="hero__device">
+          <div class="device">
+            <img src="../assets/images/luna-home-fr.jpeg" alt="L'écran d'accueil de l'app Luna affichant l'anneau du cycle et le message Règles dans 5 jours." />
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <h2 class="section__heading">Le produit</h2>
-        <div class="features">
-          <article class="feature">
+        <h2 class="section__heading">Conçue pour chaque <em>moment</em>.</h2>
+        <div class="feature-grid">
+          <article class="feature feature--lg">
             <div class="feature__icon" aria-hidden="true">&#9789;</div>
             <h3 class="feature__title">Suivi du cycle</h3>
             <p class="feature__body">Prédit vos phases, votre ovulation et vos prochaines règles avec attention.</p>
@@ -72,7 +74,7 @@
             <h3 class="feature__title">Compagne IA</h3>
             <p class="feature__body">Posez toutes vos questions à Luna, à tout moment. Calme, honnête, sans jugement.</p>
           </article>
-          <article class="feature">
+          <article class="feature feature--banner">
             <div class="feature__icon" aria-hidden="true">&#9825;</div>
             <h3 class="feature__title">Grossesse et post-partum</h3>
             <p class="feature__body">Luna grandit avec vous à chaque étape.</p>
@@ -81,58 +83,60 @@
       </div>
     </section>
 
-    <section class="section values">
-      <div class="container">
-        <div class="values__inner">
-          <h2 class="values__heading">Vos données restent les vôtres.</h2>
-          <p class="values__body">Votre cycle, vos symptômes, vos conversations avec Luna, tout vous appartient. Nous ne vendons jamais vos données. Nous ne les utilisons jamais pour entraîner une IA. Votre vie privée n'est pas négociable.</p>
+    <section class="section companion">
+      <div class="container companion__grid">
+        <div class="companion__visual">
+          <div class="companion__avatar">
+            <img src="../assets/images/luna-avatar.png" alt="Luna, votre compagne IA." />
+          </div>
+        </div>
+        <div class="companion__copy">
+          <p class="eyebrow">Voici Luna</p>
+          <h2 class="companion__title">Votre compagne IA qui <em>écoute</em>, sans jugement.</h2>
+          <ul class="companion__list">
+            <li class="companion__item">À l'écoute de votre cycle : Luna sait où vous en êtes et adapte chaque réponse.</li>
+            <li class="companion__item">Privée par conception : vos conversations ne sont jamais vendues ni utilisées pour entraîner une IA.</li>
+            <li class="companion__item">Douce, toujours : un soutien honnête et sans jugement, quand vous en avez besoin.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="section section--tight" id="notify">
+    <section class="values">
       <div class="container">
-        <div class="cta-band">
-          <h2 class="cta-band__heading">Luna arrive bientôt.</h2>
-          <p class="cta-band__subhead">Soyez prévenue dès le lancement.</p>
-          <form class="signup-form" action="mailto:contact@iamluna.app" method="post" enctype="text/plain">
-            <label class="skip-link" for="email">Adresse e-mail</label>
-            <input class="signup-form__input" type="email" id="email" name="email" placeholder="vous@exemple.com" required />
-            <button class="btn signup-form__button" type="submit">Me prévenir</button>
-          </form>
+        <h2 class="values__heading">Tes données restent à toi.</h2>
+        <div class="values__list">
+          <p class="values__item">Nous ne vendons jamais tes données.</p>
+          <p class="values__item">Nous ne l'utilisons jamais pour entraîner d'IA.</p>
+          <p class="values__item">Ta vie privée est non négociable.</p>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <span class="brand-mark">Luna</span>
-          <p class="footer__tagline">Chaque phase de toi.</p>
-        </div>
-        <nav aria-label="Pied de page">
-          <h2 class="footer__heading">Pages</h2>
-          <ul class="footer__links">
-            <li><a href="privacy.html">Confidentialité</a></li>
-            <li><a href="terms.html">Conditions</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-        <nav aria-label="Langue">
-          <h2 class="footer__heading">Langue</h2>
-          <div class="lang-switch">
-            <a href="../index.html">English</a>
-            <a href="index.html" class="current">Français</a>
-            <a href="../ar/index.html">العربية</a>
-          </div>
-        </nav>
+    <div class="container footer__inner">
+      <div class="footer__wordmark">
+        <img class="footer__avatar" src="../assets/images/luna-avatar.png" alt="" />
+        <span class="brand-mark luna-wordmark luna-wordmark--footer">Luna</span>
       </div>
-      <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2026 OTR MEDIA LLC. Tous droits réservés.</p>
-        <p class="footer__address">30 N Gould St Ste N, Sheridan, WY 82801-6317, USA</p>
-      </div>
+      <p class="footer__tagline">Chaque phase de toi.</p>
+      <nav class="footer__nav" aria-label="Pied de page">
+        <a href="privacy.html">Confidentialité</a>
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="terms.html">Conditions</a>
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <nav class="footer__langs" aria-label="Langue">
+        <a href="../index.html">EN</a>
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="index.html" class="current">FR</a>
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="../ar/index.html">AR</a>
+      </nav>
+      <p class="footer__copyright">&copy; 2026 Luna</p>
     </div>
   </footer>
 

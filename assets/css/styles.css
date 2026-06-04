@@ -1,6 +1,6 @@
 /* ==========================================================================
    Luna Marketing Site — Shared Stylesheet
-   Editorial, soft, premium design system
+   Editorial, asymmetric, magazine-quality design system
    ========================================================================== */
 
 /* ---------- Design tokens ---------- */
@@ -24,17 +24,10 @@
   --font-body: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* Layout */
-  --max-width: 1120px;
+  --max-width: 1200px;
   --max-width-narrow: 600px;
-  --radius: 16px;
+  --radius: 24px;
   --radius-sm: 10px;
-
-  /* Spacing scale */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 4rem;
-  --space-xl: 6rem;
 }
 
 /* ---------- Reset & base ---------- */
@@ -54,11 +47,20 @@ body {
   font-family: var(--font-body);
   font-weight: 400;
   font-size: 1.0625rem;
-  line-height: 1.7;
+  line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--warm-cream);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Sticky footer */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
 }
 
 img {
@@ -83,12 +85,19 @@ h3,
 h4 {
   font-family: var(--font-heading);
   color: var(--text-primary);
-  line-height: 1.2;
-  margin: 0 0 var(--space-sm);
+  line-height: 1.1;
+  margin: 0 0 1rem;
 }
 
 p {
-  margin: 0 0 var(--space-sm);
+  margin: 0 0 1rem;
+}
+
+/* Italic key-word accents that create rhythm across headlines */
+.hero__title em,
+.section__heading em {
+  font-style: italic;
+  color: var(--brand-pink);
 }
 
 /* ---------- Layout helpers ---------- */
@@ -100,11 +109,16 @@ p {
 }
 
 .section {
-  padding-block: var(--space-xl);
+  padding-block: clamp(2.75rem, 5vw, 4.5rem);
 }
 
-.section--tight {
-  padding-block: var(--space-lg);
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  color: var(--brand-pink);
+  margin: 0 0 1.25rem;
 }
 
 /* Skip link for accessibility */
@@ -144,10 +158,9 @@ p {
   padding-block: 1rem;
 }
 
+/* .brand-mark is the layout/color hook for the Luna logo; the font itself
+   comes from .luna-wordmark so header and footer match the app exactly. */
 .brand-mark {
-  font-family: var(--font-heading);
-  font-style: italic;
-  font-weight: 400;
   font-size: 1.75rem;
   color: var(--deep-purple);
   line-height: 1;
@@ -156,6 +169,66 @@ p {
 .brand-mark:hover {
   color: var(--deep-purple);
   opacity: 0.8;
+}
+
+/* Nav logo: icon symbol beside the Luna wordmark */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+/* Brand wordmark — Dancing Script, matching the Luna app's identity */
+.luna-wordmark {
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  color: var(--brand-pink);
+  line-height: 1;
+  font-style: normal;
+}
+
+.luna-wordmark--hero {
+  font-size: 96px;
+}
+
+.luna-wordmark--footer {
+  font-size: 26px;
+}
+
+.luna-wordmark--nav {
+  font-size: 32px;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .luna-wordmark--hero {
+    font-size: 64px;
+  }
+
+  .luna-wordmark--footer {
+    font-size: 24px;
+  }
+
+  .luna-wordmark--nav {
+    font-size: 26px;
+  }
+
+  .logo-icon {
+    height: 28px;
+  }
+
+  .companion__avatar {
+    width: 180px;
+    height: 180px;
+    padding: 14px;
+  }
 }
 
 .nav {
@@ -203,12 +276,12 @@ p {
 }
 
 /* ==========================================================================
-   Buttons & badges
+   Buttons
    ========================================================================== */
 .btn {
   display: inline-block;
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1rem;
   padding: 0.85rem 1.75rem;
   border-radius: 999px;
@@ -228,210 +301,255 @@ p {
   box-shadow: 0 10px 24px rgba(69, 11, 115, 0.25);
 }
 
-/* App store style "coming soon" badges */
-.badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.badge {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: var(--deep-purple);
-  color: #fff;
-  padding: 0.7rem 1.25rem;
-  border-radius: var(--radius-sm);
-  min-width: 210px;
-  text-align: start;
-}
-
-.badge:hover {
-  color: #fff;
-  opacity: 0.92;
-}
-
-.badge__icon {
-  font-size: 1.5rem;
-  line-height: 1;
-}
-
-.badge__text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.25;
-}
-
-.badge__small {
-  font-size: 0.7rem;
-  letter-spacing: 0.02em;
-  opacity: 0.85;
-}
-
-.badge__large {
-  font-size: 1.05rem;
-  font-weight: 600;
-}
-
 /* ==========================================================================
-   Hero
+   Hero — split-screen asymmetric layout
    ========================================================================== */
 .hero {
-  text-align: center;
-  padding-block: var(--space-xl);
-  background: linear-gradient(180deg, var(--light-lavender) 0%, var(--blush-white) 70%, var(--warm-cream) 100%);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--blush-white) 0%, var(--light-lavender) 100%);
+  padding-block: clamp(3rem, 6vw, 5rem);
 }
 
-.hero__wordmark {
+.hero__grid {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.hero__title {
   font-family: var(--font-heading);
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(4rem, 12vw, 6rem);
+  font-weight: 600;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 1.04;
   color: var(--deep-purple);
-  margin: 0 0 0.5rem;
-  line-height: 1;
-}
-
-.hero__tagline {
-  font-size: clamp(1.25rem, 3vw, 1.6rem);
-  color: var(--medium-purple);
-  font-weight: 500;
   margin: 0 0 1.5rem;
 }
 
 .hero__subhead {
-  max-width: 620px;
-  margin: 0 auto 2.5rem;
-  font-size: 1.15rem;
-  color: var(--text-secondary);
+  max-width: 30rem;
+  margin: 0 0 1.75rem;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.6;
+  color: rgba(110, 66, 122, 0.75);
+}
+
+/* Call to action: caption + official store badges */
+.store-badges {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.store-badges a {
+  display: inline-block;
+  transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+.store-badges a:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+.store-badge {
+  height: 56px;
+  width: auto;
+  display: block;
+}
+
+/* Device mockup with soft gradient blob behind it */
+.hero__device {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__device::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: clamp(280px, 35vw, 420px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--light-lavender), var(--brand-pink));
+  opacity: 0.3;
+  filter: blur(80px);
+}
+
+.device {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 320px;
+  border-radius: 44px;
+  overflow: hidden;
+  background: var(--deep-purple);
+  box-shadow: 0 30px 70px rgba(46, 16, 88, 0.32);
+  transform: rotate(-3deg);
+}
+
+.device img {
+  width: 100%;
+  border-radius: 44px;
 }
 
 /* ==========================================================================
-   Features grid
+   The product — asymmetric feature grid
    ========================================================================== */
-.features {
+.section__heading {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  margin: 0 0 2.25rem;
+}
+
+.feature-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: 3fr 2fr;
+  gap: 1.5rem;
 }
 
 .feature {
   background: var(--warm-cream);
-  border: 1px solid rgba(110, 66, 122, 0.1);
+  border: 1px solid var(--light-lavender);
   border-radius: var(--radius);
-  padding: 2.25rem 2rem;
+  padding: 3rem;
+}
+
+.feature--banner {
+  grid-column: 1 / -1;
+  background: linear-gradient(120deg, rgba(215, 122, 135, 0.18) 0%, var(--light-lavender) 100%);
+  border-color: rgba(215, 122, 135, 0.25);
 }
 
 .feature__icon {
-  font-size: 1.75rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.85rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  color: var(--brand-purple);
 }
 
 .feature__title {
-  font-size: 1.4rem;
+  font-size: 1.75rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .feature__body {
   color: var(--text-secondary);
   margin: 0;
-}
-
-.section__heading {
-  text-align: center;
-  font-size: clamp(2rem, 5vw, 2.75rem);
-  font-weight: 600;
-  margin-bottom: 3rem;
+  max-width: 34rem;
 }
 
 /* ==========================================================================
-   Values block
+   Companion — avatar feature, two-column
    ========================================================================== */
-.values {
-  background: linear-gradient(180deg, var(--blush-white) 0%, var(--warm-cream) 100%);
+.companion {
+  background: var(--blush-white);
 }
 
-.values__inner {
-  max-width: var(--max-width-narrow);
-  margin-inline: auto;
+.companion__grid {
+  display: grid;
+  grid-template-columns: 45fr 55fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+
+.companion__visual {
+  display: flex;
+  justify-content: center;
+}
+
+.companion__avatar {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--light-lavender) 0%, var(--blush-white) 100%);
+  box-shadow: 0 20px 50px rgba(46, 16, 88, 0.18);
+}
+
+.companion__avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.companion__title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+}
+
+.companion__title em {
+  font-style: italic;
+  color: var(--brand-pink);
+}
+
+.companion__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.companion__item {
+  position: relative;
+  padding-inline-start: 1.75rem;
+  color: var(--text-secondary);
+}
+
+.companion__item::before {
+  content: "\2713";
+  position: absolute;
+  inset-inline-start: 0;
+  color: var(--brand-pink);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Values — full-bleed deep purple
+   ========================================================================== */
+.values {
+  background: var(--brand-purple);
+  color: #fff;
   text-align: center;
+  padding-block: clamp(3rem, 6vw, 5rem);
 }
 
 .values__heading {
-  font-size: clamp(2rem, 5vw, 2.75rem);
-  font-weight: 600;
-  margin-bottom: 1.25rem;
-}
-
-.values__body {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-  margin: 0;
-}
-
-/* ==========================================================================
-   Coming soon / signup band
-   ========================================================================== */
-.cta-band {
-  background: linear-gradient(135deg, var(--brand-purple) 0%, var(--deep-purple) 100%);
   color: #fff;
-  border-radius: var(--radius);
-  text-align: center;
-  padding: 3.5rem 2rem;
-}
-
-.cta-band__heading {
-  color: #fff;
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-style: italic;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  margin: 0 0 2rem;
 }
 
-.cta-band__subhead {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 1.15rem;
-  margin-bottom: 2rem;
-}
-
-.signup-form {
+.values__list {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
-  max-width: 480px;
-  margin-inline: auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
 }
 
-.signup-form__input {
-  flex: 1 1 240px;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  padding: 0.85rem 1.25rem;
-  border: 0;
-  border-radius: 999px;
-  background: var(--warm-cream);
-  color: var(--text-primary);
+.values__item {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  color: rgba(255, 255, 255, 0.92);
 }
 
-.signup-form__input::placeholder {
-  color: var(--medium-purple);
-  opacity: 0.7;
-}
-
-.signup-form__button {
-  background: var(--brand-pink);
-  color: var(--deep-purple);
-  font-weight: 600;
-  flex: 0 0 auto;
-}
-
-.signup-form__button:hover {
-  color: var(--deep-purple);
-  transform: translateY(-1px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+.values__item::before {
+  content: "\2713";
+  color: var(--brand-pink);
+  font-weight: 700;
+  margin-inline-end: 0.6rem;
 }
 
 /* ==========================================================================
@@ -440,7 +558,13 @@ p {
 .page-header {
   background: linear-gradient(180deg, var(--light-lavender) 0%, var(--warm-cream) 100%);
   text-align: center;
-  padding-block: var(--space-lg);
+  padding-block: clamp(2.5rem, 6vw, 4rem) 0;
+}
+
+/* Tighten the gap between a legal page's title block and its body content
+   (.page-header only appears on privacy.html and terms.html). */
+.page-header + .section {
+  padding-top: clamp(3rem, 6vw, 5rem);
 }
 
 .page-header__title {
@@ -456,6 +580,7 @@ p {
 .prose {
   max-width: 760px;
   margin-inline: auto;
+  line-height: 1.7;
 }
 
 .prose h2 {
@@ -500,21 +625,35 @@ p {
   font-size: 1.2rem;
   color: var(--text-secondary);
   margin-bottom: 2rem;
+  line-height: 1.7;
 }
 
-.contact__email {
-  display: inline-block;
+.contact__title {
   font-family: var(--font-heading);
   font-style: italic;
-  font-size: clamp(1.5rem, 5vw, 2.25rem);
-  color: var(--brand-purple);
-  margin-bottom: 2.5rem;
+  font-weight: 600;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  margin: 0 0 1rem;
 }
 
-.address {
-  font-style: normal;
-  color: var(--text-secondary);
-  line-height: 1.8;
+.contact__card {
+  display: inline-block;
+  margin: 1.5rem 0 1rem;
+  padding: 1.25rem 2.5rem;
+  background: var(--light-lavender);
+  border: 1px solid rgba(110, 66, 122, 0.15);
+  border-radius: var(--radius);
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: clamp(1.25rem, 4vw, 1.85rem);
+  color: var(--brand-purple);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.contact__card:hover {
+  color: var(--brand-purple);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(46, 16, 88, 0.15);
 }
 
 .contact__note {
@@ -529,7 +668,7 @@ p {
 .site-footer {
   background: var(--deep-purple);
   color: rgba(255, 255, 255, 0.8);
-  padding-block: var(--space-lg) var(--space-md);
+  padding-block: 1.75rem 1.5rem;
   margin-top: auto;
 }
 
@@ -541,104 +680,99 @@ p {
   color: #fff;
 }
 
-.footer__top {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  align-items: start;
+/* Minimal centered footer: wordmark, tagline, links, language switcher */
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
 }
 
-.footer__brand .brand-mark {
-  color: #fff;
-  font-size: 1.75rem;
+/* Footer wordmark cluster: avatar beside the small Luna wordmark */
+.footer__wordmark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
 }
 
 .footer__tagline {
   color: rgba(255, 255, 255, 0.7);
-  margin: 0.5rem 0 0;
+  margin: 0;
   font-size: 0.95rem;
 }
 
-.footer__heading {
-  color: #fff;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.footer__links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.footer__nav,
+.footer__langs {
   display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
 }
 
-.lang-switch {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+.footer__sep {
+  color: rgba(255, 255, 255, 0.35);
 }
 
-.lang-switch a.current {
+.footer__langs a.current {
   color: #fff;
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
-.footer__bottom {
-  margin-top: var(--space-md);
-  padding-top: var(--space-md);
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  text-align: center;
-}
-
 .footer__copyright {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.footer__address {
-  margin: 0.4rem 0 0;
+  margin: 0.5rem 0 0;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.55);
-}
-
-/* Make footer stick to bottom on short pages */
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 1 0 auto;
 }
 
 /* ==========================================================================
    Responsive
    ========================================================================== */
 @media (max-width: 900px) {
-  .features {
+  .hero__grid {
     grid-template-columns: 1fr;
-    max-width: 520px;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .hero__subhead {
     margin-inline: auto;
   }
 
-  .footer__top {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    text-align: center;
+  .store-badges {
+    justify-content: center;
   }
 
-  .footer__links,
-  .lang-switch {
+  .device {
+    transform: none;
+    margin-inline: auto;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .companion__grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .companion__list {
     align-items: center;
+  }
+
+  .companion__item {
+    text-align: start;
   }
 }
 
@@ -670,11 +804,11 @@ main {
     width: 100%;
   }
 
-  .section {
-    padding-block: var(--space-lg);
+  .feature {
+    padding: 2.25rem;
   }
 
-  .badge {
-    min-width: 100%;
+  .store-badge {
+    height: 48px;
   }
 }

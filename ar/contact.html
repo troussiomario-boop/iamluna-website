@@ -4,21 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>تواصلي معنا — Luna</title>
-  <meta name="description" content="تواصلي مع فريق لونا في OTR MEDIA LLC." />
+  <meta name="description" content="تواصلي مع فريق Luna." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=Tajawal:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../assets/css/styles.css" />
   <link rel="stylesheet" href="../assets/css/styles-rtl.css" />
+  <link rel="icon" type="image/png" href="../assets/images/luna-icon.png" />
+  <link rel="apple-touch-icon" href="../assets/images/luna-icon.png" />
 </head>
 <body>
   <a class="skip-link" href="#main">تخطٍّ إلى المحتوى</a>
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand-mark" href="index.html">Luna</a>
+      <a class="logo-link" href="index.html">
+        <img class="logo-icon" src="../assets/images/luna-icon.png" alt="Luna" />
+        <span class="luna-wordmark luna-wordmark--nav">Luna</span>
+      </a>
       <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
@@ -35,57 +40,40 @@
   </header>
 
   <main id="main">
-    <header class="page-header">
-      <div class="container">
-        <h1 class="page-header__title">تواصلي معنا.</h1>
-      </div>
-    </header>
-
     <section class="section">
       <div class="container">
         <div class="contact">
-          <p class="contact__intro">يسعدنا أن نسمع منكِ. سواء كان لديكِ سؤال أو ملاحظة أو طلب يتعلق بالخصوصية، فإن فريق لونا هنا لمساعدتكِ. تواصلي معنا وسنردّ عليكِ.</p>
-          <a class="contact__email" href="mailto:contact@iamluna.app">contact@iamluna.app</a>
-          <address class="address">
-            OTR MEDIA LLC<br />
-            30 N Gould St Ste N<br />
-            Sheridan, WY 82801-6317<br />
-            الولايات المتحدة الأمريكية
-          </address>
-          <p class="contact__note">نردّ عادةً خلال يومي عمل.</p>
+          <h1 class="contact__title">تواصلي معنا</h1>
+          <p class="contact__intro">أسئلة أو ملاحظات أو قصة تريدين مشاركتها: يسعدنا أن نسمع منكِ.</p>
+          <a class="contact__card" href="mailto:contact@iamluna.app">contact@iamluna.app</a>
+          <p class="contact__note">نردّ عادةً خلال يومَي عمل.</p>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <span class="brand-mark">Luna</span>
-          <p class="footer__tagline">كل مرحلة منكِ.</p>
-        </div>
-        <nav aria-label="تذييل الصفحة">
-          <h2 class="footer__heading">الصفحات</h2>
-          <ul class="footer__links">
-            <li><a href="privacy.html">الخصوصية</a></li>
-            <li><a href="terms.html">الشروط</a></li>
-            <li><a href="contact.html">تواصلي معنا</a></li>
-          </ul>
-        </nav>
-        <nav aria-label="اللغة">
-          <h2 class="footer__heading">اللغة</h2>
-          <div class="lang-switch">
-            <a href="../contact.html">English</a>
-            <a href="../fr/contact.html">Français</a>
-            <a href="contact.html" class="current">العربية</a>
-          </div>
-        </nav>
+    <div class="container footer__inner">
+      <div class="footer__wordmark">
+        <img class="footer__avatar" src="../assets/images/luna-avatar.png" alt="" />
+        <span class="brand-mark luna-wordmark luna-wordmark--footer">Luna</span>
       </div>
-      <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2026 OTR MEDIA LLC. جميع الحقوق محفوظة.</p>
-        <p class="footer__address">30 N Gould St Ste N, Sheridan, WY 82801-6317, USA</p>
-      </div>
+      <p class="footer__tagline">كل مرحلة منكِ</p>
+      <nav class="footer__nav" aria-label="تذييل الصفحة">
+        <a href="privacy.html">الخصوصية</a>
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="terms.html">الشروط</a>
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="contact.html">تواصلي معنا</a>
+      </nav>
+      <nav class="footer__langs" aria-label="اللغة">
+        <a href="../contact.html">EN</a>
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="../fr/contact.html">FR</a>
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="contact.html" class="current">AR</a>
+      </nav>
+      <p class="footer__copyright">&copy; 2026 Luna</p>
     </div>
   </footer>
 

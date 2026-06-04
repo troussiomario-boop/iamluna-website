@@ -8,17 +8,22 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=Tajawal:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../assets/css/styles.css" />
   <link rel="stylesheet" href="../assets/css/styles-rtl.css" />
+  <link rel="icon" type="image/png" href="../assets/images/luna-icon.png" />
+  <link rel="apple-touch-icon" href="../assets/images/luna-icon.png" />
 </head>
 <body>
   <a class="skip-link" href="#main">تخطٍّ إلى المحتوى</a>
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand-mark" href="index.html">Luna</a>
+      <a class="logo-link" href="index.html">
+        <img class="logo-icon" src="../assets/images/luna-icon.png" alt="Luna" />
+        <span class="luna-wordmark luna-wordmark--nav">Luna</span>
+      </a>
       <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
@@ -36,34 +41,31 @@
 
   <main id="main">
     <section class="hero">
-      <div class="container">
-        <h1 class="hero__wordmark">Luna</h1>
-        <p class="hero__tagline">كل مرحلة منكِ.</p>
-        <p class="hero__subhead">رفيقة صحة نسائية بثلاث لغات. الدورة، الخصوبة، الحمل، بهدوء وصدق، وحاضرة دائمًا.</p>
-        <div class="badges">
-          <a class="badge" href="#notify">
-            <span class="badge__icon" aria-hidden="true">&#63743;</span>
-            <span class="badge__text">
-              <span class="badge__small">قريبًا على</span>
-              <span class="badge__large">App Store</span>
-            </span>
-          </a>
-          <a class="badge" href="#notify">
-            <span class="badge__icon" aria-hidden="true">&#9658;</span>
-            <span class="badge__text">
-              <span class="badge__small">قريبًا على</span>
-              <span class="badge__large">Google Play</span>
-            </span>
-          </a>
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">كل مرحلة منكِ</p>
+          <h1 class="hero__title">رفيقة صحتك التي <em>تصغي</em>، لا تحكم.</h1>
+          <p class="hero__subhead">تتبّع الدورة، رفيقة ذكاء اصطناعي، ودعم خلال الحمل، بثلاث لغات. مصمّمة حول خصوصيتك.</p>
+          <div class="hero__cta">
+            <div class="store-badges">
+              <a href="#notify"><img class="store-badge" src="../assets/images/ar-app-store.png" alt="قريبًا على App Store" /></a>
+              <a href="#notify"><img class="store-badge" src="../assets/images/ar-google-play.png" alt="قريبًا على Google Play" /></a>
+            </div>
+          </div>
+        </div>
+        <div class="hero__device">
+          <div class="device">
+            <img src="../assets/images/luna-home-ar.jpeg" alt="الشاشة الرئيسية لتطبيق لونا تعرض حلقة الدورة ورسالة الدورة بعد 5 أيام." />
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <h2 class="section__heading">المنتج</h2>
-        <div class="features">
-          <article class="feature">
+        <h2 class="section__heading">مصمّمة لكل <em>لحظة</em>.</h2>
+        <div class="feature-grid">
+          <article class="feature feature--lg">
             <div class="feature__icon" aria-hidden="true">&#9789;</div>
             <h3 class="feature__title">تتبّع الدورة</h3>
             <p class="feature__body">تتنبأ بمراحلكِ وموعد الإباضة ودورتكِ القادمة بعناية.</p>
@@ -73,7 +75,7 @@
             <h3 class="feature__title">رفيقة الذكاء الاصطناعي</h3>
             <p class="feature__body">اسألي لونا عن أي شيء، في أي وقت. بهدوء وصدق ودون أحكام.</p>
           </article>
-          <article class="feature">
+          <article class="feature feature--banner">
             <div class="feature__icon" aria-hidden="true">&#9825;</div>
             <h3 class="feature__title">الحمل وما بعد الولادة</h3>
             <p class="feature__body">تكبر لونا معكِ في كل فصل من رحلتكِ.</p>
@@ -82,58 +84,60 @@
       </div>
     </section>
 
-    <section class="section values">
-      <div class="container">
-        <div class="values__inner">
-          <h2 class="values__heading">بياناتكِ تبقى ملككِ.</h2>
-          <p class="values__body">دورتكِ، أعراضكِ، محادثاتكِ مع لونا، كلها ملككِ. لا نبيع بياناتكِ أبدًا. ولا نستخدمها أبدًا لتدريب الذكاء الاصطناعي. خصوصيتكِ غير قابلة للتفاوض.</p>
+    <section class="section companion">
+      <div class="container companion__grid">
+        <div class="companion__visual">
+          <div class="companion__avatar">
+            <img src="../assets/images/luna-avatar.png" alt="لونا، رفيقتك الذكية." />
+          </div>
+        </div>
+        <div class="companion__copy">
+          <p class="eyebrow">تعرّفي على لونا</p>
+          <h2 class="companion__title">رفيقتك الذكية التي <em>تستمع</em>، دون أن تحكم.</h2>
+          <ul class="companion__list">
+            <li class="companion__item">تفهم دورتك: تعرف لونا أين أنتِ في دورتك وتكيّف كل إجابة.</li>
+            <li class="companion__item">خاصة بطبيعتها: محادثاتك لا تُباع أبدًا ولا تُستخدم لتدريب الذكاء الاصطناعي.</li>
+            <li class="companion__item">لطيفة دائمًا: دعم صادق وبلا أحكام، وقتما تحتاجين.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="section section--tight" id="notify">
+    <section class="values">
       <div class="container">
-        <div class="cta-band">
-          <h2 class="cta-band__heading">لونا تنطلق قريبًا.</h2>
-          <p class="cta-band__subhead">احصلي على إشعار عند انطلاقنا.</p>
-          <form class="signup-form" action="mailto:contact@iamluna.app" method="post" enctype="text/plain">
-            <label class="skip-link" for="email">البريد الإلكتروني</label>
-            <input class="signup-form__input" type="email" id="email" name="email" placeholder="you@example.com" required />
-            <button class="btn signup-form__button" type="submit">أبلغيني</button>
-          </form>
+        <h2 class="values__heading">بياناتك تبقى لكِ.</h2>
+        <div class="values__list">
+          <p class="values__item">لا نبيع بياناتك أبدًا.</p>
+          <p class="values__item">لا نستخدمها أبدًا لتدريب الذكاء الاصطناعي.</p>
+          <p class="values__item">خصوصيتك غير قابلة للتفاوض.</p>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <span class="brand-mark">Luna</span>
-          <p class="footer__tagline">كل مرحلة منكِ.</p>
-        </div>
-        <nav aria-label="تذييل الصفحة">
-          <h2 class="footer__heading">الصفحات</h2>
-          <ul class="footer__links">
-            <li><a href="privacy.html">الخصوصية</a></li>
-            <li><a href="terms.html">الشروط</a></li>
-            <li><a href="contact.html">تواصلي معنا</a></li>
-          </ul>
-        </nav>
-        <nav aria-label="اللغة">
-          <h2 class="footer__heading">اللغة</h2>
-          <div class="lang-switch">
-            <a href="../index.html">English</a>
-            <a href="../fr/index.html">Français</a>
-            <a href="index.html" class="current">العربية</a>
-          </div>
-        </nav>
+    <div class="container footer__inner">
+      <div class="footer__wordmark">
+        <img class="footer__avatar" src="../assets/images/luna-avatar.png" alt="" />
+        <span class="brand-mark luna-wordmark luna-wordmark--footer">Luna</span>
       </div>
-      <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2026 OTR MEDIA LLC. جميع الحقوق محفوظة.</p>
-        <p class="footer__address">30 N Gould St Ste N, Sheridan, WY 82801-6317, USA</p>
-      </div>
+      <p class="footer__tagline">كل مرحلة منكِ</p>
+      <nav class="footer__nav" aria-label="تذييل الصفحة">
+        <a href="privacy.html">الخصوصية</a>
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="terms.html">الشروط</a>
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="contact.html">تواصلي معنا</a>
+      </nav>
+      <nav class="footer__langs" aria-label="اللغة">
+        <a href="../index.html">EN</a>
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="../fr/index.html">FR</a>
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="index.html" class="current">AR</a>
+      </nav>
+      <p class="footer__copyright">&copy; 2026 Luna</p>
     </div>
   </footer>
 

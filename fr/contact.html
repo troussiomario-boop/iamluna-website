@@ -4,20 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Luna</title>
-  <meta name="description" content="Contactez l'équipe Luna chez OTR MEDIA LLC." />
+  <meta name="description" content="Contactez l'équipe Luna." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=Tajawal:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="icon" type="image/png" href="../assets/images/luna-icon.png" />
+  <link rel="apple-touch-icon" href="../assets/images/luna-icon.png" />
 </head>
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand-mark" href="index.html">Luna</a>
+      <a class="logo-link" href="index.html">
+        <img class="logo-icon" src="../assets/images/luna-icon.png" alt="Luna" />
+        <span class="luna-wordmark luna-wordmark--nav">Luna</span>
+      </a>
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
@@ -34,23 +39,12 @@
   </header>
 
   <main id="main">
-    <header class="page-header">
-      <div class="container">
-        <h1 class="page-header__title">Contactez-nous.</h1>
-      </div>
-    </header>
-
     <section class="section">
       <div class="container">
         <div class="contact">
-          <p class="contact__intro">Nous serions ravies de vous lire. Que vous ayez une question, un retour ou une demande relative à la confidentialité, l'équipe Luna est là pour vous aider. Écrivez-nous et nous vous répondrons.</p>
-          <a class="contact__email" href="mailto:contact@iamluna.app">contact@iamluna.app</a>
-          <address class="address">
-            OTR MEDIA LLC<br />
-            30 N Gould St Ste N<br />
-            Sheridan, WY 82801-6317<br />
-            États-Unis
-          </address>
+          <h1 class="contact__title">Contactez-nous</h1>
+          <p class="contact__intro">Une question, un retour ou une histoire à partager : nous serions ravies de vous lire.</p>
+          <a class="contact__card" href="mailto:contact@iamluna.app">contact@iamluna.app</a>
           <p class="contact__note">Nous répondons généralement sous 2 jours ouvrés.</p>
         </div>
       </div>
@@ -58,33 +52,27 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <span class="brand-mark">Luna</span>
-          <p class="footer__tagline">Chaque phase de toi.</p>
-        </div>
-        <nav aria-label="Pied de page">
-          <h2 class="footer__heading">Pages</h2>
-          <ul class="footer__links">
-            <li><a href="privacy.html">Confidentialité</a></li>
-            <li><a href="terms.html">Conditions</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-        <nav aria-label="Langue">
-          <h2 class="footer__heading">Langue</h2>
-          <div class="lang-switch">
-            <a href="../contact.html">English</a>
-            <a href="contact.html" class="current">Français</a>
-            <a href="../ar/contact.html">العربية</a>
-          </div>
-        </nav>
+    <div class="container footer__inner">
+      <div class="footer__wordmark">
+        <img class="footer__avatar" src="../assets/images/luna-avatar.png" alt="" />
+        <span class="brand-mark luna-wordmark luna-wordmark--footer">Luna</span>
       </div>
-      <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2026 OTR MEDIA LLC. Tous droits réservés.</p>
-        <p class="footer__address">30 N Gould St Ste N, Sheridan, WY 82801-6317, USA</p>
-      </div>
+      <p class="footer__tagline">Chaque phase de toi.</p>
+      <nav class="footer__nav" aria-label="Pied de page">
+        <a href="privacy.html">Confidentialité</a>
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="terms.html">Conditions</a>
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <nav class="footer__langs" aria-label="Langue">
+        <a href="../contact.html">EN</a>
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="contact.html" class="current">FR</a>
+        <span class="footer__sep" aria-hidden="true">·</span>
+        <a href="../ar/contact.html">AR</a>
+      </nav>
+      <p class="footer__copyright">&copy; 2026 Luna</p>
     </div>
   </footer>
 
