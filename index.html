@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luna — Every phase of you.</title>
+  <meta name="description" content="A trilingual women's health companion. Cycle, fertility, pregnancy, calmly, honestly, always present." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand-mark" href="index.html">Luna</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="privacy.html">Privacy</a></li>
+          <li><a class="nav__link" href="terms.html">Terms</a></li>
+          <li><a class="nav__link" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero__wordmark">Luna</h1>
+        <p class="hero__tagline">Every phase of you.</p>
+        <p class="hero__subhead">A trilingual women's health companion. Cycle, fertility, pregnancy, calmly, honestly, always present.</p>
+        <div class="badges">
+          <a class="badge" href="#notify">
+            <span class="badge__icon" aria-hidden="true">&#63743;</span>
+            <span class="badge__text">
+              <span class="badge__small">Coming soon to</span>
+              <span class="badge__large">App Store</span>
+            </span>
+          </a>
+          <a class="badge" href="#notify">
+            <span class="badge__icon" aria-hidden="true">&#9658;</span>
+            <span class="badge__text">
+              <span class="badge__small">Coming soon to</span>
+              <span class="badge__large">Google Play</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The product -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__heading">The product</h2>
+        <div class="features">
+          <article class="feature">
+            <div class="feature__icon" aria-hidden="true">&#9789;</div>
+            <h3 class="feature__title">Cycle tracking</h3>
+            <p class="feature__body">Predicts your phases, ovulation, and next period with care.</p>
+          </article>
+          <article class="feature">
+            <div class="feature__icon" aria-hidden="true">&#10024;</div>
+            <h3 class="feature__title">AI companion</h3>
+            <p class="feature__body">Ask Luna anything, anytime. Calm, honest, judgment-free.</p>
+          </article>
+          <article class="feature">
+            <div class="feature__icon" aria-hidden="true">&#9825;</div>
+            <h3 class="feature__title">Pregnancy &amp; postpartum</h3>
+            <p class="feature__body">Luna grows with you through every chapter.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- The values -->
+    <section class="section values">
+      <div class="container">
+        <div class="values__inner">
+          <h2 class="values__heading">Your data stays yours.</h2>
+          <p class="values__body">Your cycle, your symptoms, your conversations with Luna, all yours. We never sell your data. We never use it to train AI. Your privacy is non-negotiable.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coming soon / signup -->
+    <section class="section section--tight" id="notify">
+      <div class="container">
+        <div class="cta-band">
+          <h2 class="cta-band__heading">Luna is launching soon.</h2>
+          <p class="cta-band__subhead">Get notified when we go live.</p>
+          <form class="signup-form" action="mailto:contact@iamluna.app" method="post" enctype="text/plain">
+            <label class="skip-link" for="email">Email address</label>
+            <input class="signup-form__input" type="email" id="email" name="email" placeholder="you@example.com" required />
+            <button class="btn signup-form__button" type="submit">Notify me</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="brand-mark">Luna</span>
+          <p class="footer__tagline">Every phase of you.</p>
+        </div>
+        <nav aria-label="Footer">
+          <h2 class="footer__heading">Pages</h2>
+          <ul class="footer__links">
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Language">
+          <h2 class="footer__heading">Language</h2>
+          <div class="lang-switch">
+            <a href="index.html" class="current">English</a>
+            <a href="fr/index.html">Français</a>
+            <a href="ar/index.html">العربية</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 OTR MEDIA LLC. All rights reserved.</p>
+        <p class="footer__address">30 N Gould St Ste N, Sheridan, WY 82801-6317, USA</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    (function () {
+      var toggle = document.querySelector(".nav-toggle");
+      var nav = document.getElementById("primary-nav");
+      if (!toggle || !nav) return;
+      toggle.addEventListener("click", function () {
+        var open = nav.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    })();
+  </script>
+</body>
+</html>

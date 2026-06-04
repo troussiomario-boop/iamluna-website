@@ -1,0 +1,680 @@
+/* ==========================================================================
+   Luna Marketing Site — Shared Stylesheet
+   Editorial, soft, premium design system
+   ========================================================================== */
+
+/* ---------- Design tokens ---------- */
+:root {
+  /* Brand palette */
+  --deep-purple: #2E1058;
+  --brand-purple: #450B73;
+  --medium-purple: #6E427A;
+  --brand-pink: #D77A87;
+  --accent-pink: #BC78B8;
+  --light-lavender: #EAD3F5;
+  --blush-white: #FBF5FB;
+  --warm-cream: #FFFAFB;
+
+  /* Semantic text colors */
+  --text-primary: #2E1058;
+  --text-secondary: #6E427A;
+
+  /* Typography */
+  --font-heading: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Layout */
+  --max-width: 1120px;
+  --max-width-narrow: 600px;
+  --radius: 16px;
+  --radius-sm: 10px;
+
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+}
+
+/* ---------- Reset & base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background-color: var(--warm-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--brand-purple);
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-pink);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin: 0 0 var(--space-sm);
+}
+
+p {
+  margin: 0 0 var(--space-sm);
+}
+
+/* ---------- Layout helpers ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.section {
+  padding-block: var(--space-xl);
+}
+
+.section--tight {
+  padding-block: var(--space-lg);
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  inset-inline-start: -999px;
+  top: 0;
+  background: var(--brand-purple);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  z-index: 100;
+}
+
+.skip-link:focus {
+  inset-inline-start: 0;
+  color: #fff;
+}
+
+/* ==========================================================================
+   Site header / navigation
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 250, 251, 0.85);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid rgba(110, 66, 122, 0.08);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1rem;
+}
+
+.brand-mark {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.75rem;
+  color: var(--deep-purple);
+  line-height: 1;
+}
+
+.brand-mark:hover {
+  color: var(--deep-purple);
+  opacity: 0.8;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.nav__link:hover {
+  color: var(--brand-purple);
+}
+
+/* Mobile menu toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--deep-purple);
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  margin: 5px 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* ==========================================================================
+   Buttons & badges
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 999px;
+  border: 0;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.btn--primary {
+  background: var(--brand-purple);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(69, 11, 115, 0.25);
+}
+
+/* App store style "coming soon" badges */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--deep-purple);
+  color: #fff;
+  padding: 0.7rem 1.25rem;
+  border-radius: var(--radius-sm);
+  min-width: 210px;
+  text-align: start;
+}
+
+.badge:hover {
+  color: #fff;
+  opacity: 0.92;
+}
+
+.badge__icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.badge__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.badge__small {
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+}
+
+.badge__large {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+  text-align: center;
+  padding-block: var(--space-xl);
+  background: linear-gradient(180deg, var(--light-lavender) 0%, var(--blush-white) 70%, var(--warm-cream) 100%);
+}
+
+.hero__wordmark {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(4rem, 12vw, 6rem);
+  color: var(--deep-purple);
+  margin: 0 0 0.5rem;
+  line-height: 1;
+}
+
+.hero__tagline {
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  color: var(--medium-purple);
+  font-weight: 500;
+  margin: 0 0 1.5rem;
+}
+
+.hero__subhead {
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Features grid
+   ========================================================================== */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.feature {
+  background: var(--warm-cream);
+  border: 1px solid rgba(110, 66, 122, 0.1);
+  border-radius: var(--radius);
+  padding: 2.25rem 2rem;
+}
+
+.feature__icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.feature__title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.feature__body {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.section__heading {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+/* ==========================================================================
+   Values block
+   ========================================================================== */
+.values {
+  background: linear-gradient(180deg, var(--blush-white) 0%, var(--warm-cream) 100%);
+}
+
+.values__inner {
+  max-width: var(--max-width-narrow);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.values__heading {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.values__body {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Coming soon / signup band
+   ========================================================================== */
+.cta-band {
+  background: linear-gradient(135deg, var(--brand-purple) 0%, var(--deep-purple) 100%);
+  color: #fff;
+  border-radius: var(--radius);
+  text-align: center;
+  padding: 3.5rem 2rem;
+}
+
+.cta-band__heading {
+  color: #fff;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.cta-band__subhead {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+}
+
+.signup-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+.signup-form__input {
+  flex: 1 1 240px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.85rem 1.25rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--warm-cream);
+  color: var(--text-primary);
+}
+
+.signup-form__input::placeholder {
+  color: var(--medium-purple);
+  opacity: 0.7;
+}
+
+.signup-form__button {
+  background: var(--brand-pink);
+  color: var(--deep-purple);
+  font-weight: 600;
+  flex: 0 0 auto;
+}
+
+.signup-form__button:hover {
+  color: var(--deep-purple);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   Legal / content pages
+   ========================================================================== */
+.page-header {
+  background: linear-gradient(180deg, var(--light-lavender) 0%, var(--warm-cream) 100%);
+  text-align: center;
+  padding-block: var(--space-lg);
+}
+
+.page-header__title {
+  font-size: clamp(2.25rem, 6vw, 3.25rem);
+  font-weight: 600;
+}
+
+.page-header__meta {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.prose {
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.prose h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.75rem;
+}
+
+.prose p,
+.prose li {
+  color: var(--text-secondary);
+}
+
+.prose ul {
+  padding-inline-start: 1.25rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose a {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Contact page
+   ========================================================================== */
+.contact {
+  text-align: center;
+  max-width: var(--max-width-narrow);
+  margin-inline: auto;
+}
+
+.contact__intro {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.contact__email {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  color: var(--brand-purple);
+  margin-bottom: 2.5rem;
+}
+
+.address {
+  font-style: normal;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.contact__note {
+  margin-top: 2rem;
+  color: var(--medium-purple);
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+  background: var(--deep-purple);
+  color: rgba(255, 255, 255, 0.8);
+  padding-block: var(--space-lg) var(--space-md);
+  margin-top: auto;
+}
+
+.site-footer a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.site-footer a:hover {
+  color: #fff;
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.footer__brand .brand-mark {
+  color: #fff;
+  font-size: 1.75rem;
+}
+
+.footer__tagline {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+}
+
+.footer__heading {
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.lang-switch {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.lang-switch a.current {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.footer__bottom {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: center;
+}
+
+.footer__copyright {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer__address {
+  margin: 0.4rem 0 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Make footer stick to bottom on short pages */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 900px) {
+  .features {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  .footer__top {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .footer__links,
+  .lang-switch {
+    align-items: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    inset-inline: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--warm-cream);
+    border-bottom: 1px solid rgba(110, 66, 122, 0.12);
+    padding: 1rem 1.5rem;
+    display: none;
+  }
+
+  .nav.is-open {
+    display: flex;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .section {
+    padding-block: var(--space-lg);
+  }
+
+  .badge {
+    min-width: 100%;
+  }
+}

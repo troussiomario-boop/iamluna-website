@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luna — كل مرحلة منكِ.</title>
+  <meta name="description" content="رفيقة صحة نسائية بثلاث لغات. الدورة، الخصوبة، الحمل، بهدوء وصدق، وحاضرة دائمًا." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/styles-rtl.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">تخطٍّ إلى المحتوى</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand-mark" href="index.html">Luna</a>
+      <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="nav" id="primary-nav" aria-label="التنقل الرئيسي">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="privacy.html">الخصوصية</a></li>
+          <li><a class="nav__link" href="terms.html">الشروط</a></li>
+          <li><a class="nav__link" href="contact.html">تواصلي معنا</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero__wordmark">Luna</h1>
+        <p class="hero__tagline">كل مرحلة منكِ.</p>
+        <p class="hero__subhead">رفيقة صحة نسائية بثلاث لغات. الدورة، الخصوبة، الحمل، بهدوء وصدق، وحاضرة دائمًا.</p>
+        <div class="badges">
+          <a class="badge" href="#notify">
+            <span class="badge__icon" aria-hidden="true">&#63743;</span>
+            <span class="badge__text">
+              <span class="badge__small">قريبًا على</span>
+              <span class="badge__large">App Store</span>
+            </span>
+          </a>
+          <a class="badge" href="#notify">
+            <span class="badge__icon" aria-hidden="true">&#9658;</span>
+            <span class="badge__text">
+              <span class="badge__small">قريبًا على</span>
+              <span class="badge__large">Google Play</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__heading">المنتج</h2>
+        <div class="features">
+          <article class="feature">
+            <div class="feature__icon" aria-hidden="true">&#9789;</div>
+            <h3 class="feature__title">تتبّع الدورة</h3>
+            <p class="feature__body">تتنبأ بمراحلكِ وموعد الإباضة ودورتكِ القادمة بعناية.</p>
+          </article>
+          <article class="feature">
+            <div class="feature__icon" aria-hidden="true">&#10024;</div>
+            <h3 class="feature__title">رفيقة الذكاء الاصطناعي</h3>
+            <p class="feature__body">اسألي لونا عن أي شيء، في أي وقت. بهدوء وصدق ودون أحكام.</p>
+          </article>
+          <article class="feature">
+            <div class="feature__icon" aria-hidden="true">&#9825;</div>
+            <h3 class="feature__title">الحمل وما بعد الولادة</h3>
+            <p class="feature__body">تكبر لونا معكِ في كل فصل من رحلتكِ.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section values">
+      <div class="container">
+        <div class="values__inner">
+          <h2 class="values__heading">بياناتكِ تبقى ملككِ.</h2>
+          <p class="values__body">دورتكِ، أعراضكِ، محادثاتكِ مع لونا، كلها ملككِ. لا نبيع بياناتكِ أبدًا. ولا نستخدمها أبدًا لتدريب الذكاء الاصطناعي. خصوصيتكِ غير قابلة للتفاوض.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="notify">
+      <div class="container">
+        <div class="cta-band">
+          <h2 class="cta-band__heading">لونا تنطلق قريبًا.</h2>
+          <p class="cta-band__subhead">احصلي على إشعار عند انطلاقنا.</p>
+          <form class="signup-form" action="mailto:contact@iamluna.app" method="post" enctype="text/plain">
+            <label class="skip-link" for="email">البريد الإلكتروني</label>
+            <input class="signup-form__input" type="email" id="email" name="email" placeholder="you@example.com" required />
+            <button class="btn signup-form__button" type="submit">أبلغيني</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <span class="brand-mark">Luna</span>
+          <p class="footer__tagline">كل مرحلة منكِ.</p>
+        </div>
+        <nav aria-label="تذييل الصفحة">
+          <h2 class="footer__heading">الصفحات</h2>
+          <ul class="footer__links">
+            <li><a href="privacy.html">الخصوصية</a></li>
+            <li><a href="terms.html">الشروط</a></li>
+            <li><a href="contact.html">تواصلي معنا</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="اللغة">
+          <h2 class="footer__heading">اللغة</h2>
+          <div class="lang-switch">
+            <a href="../index.html">English</a>
+            <a href="../fr/index.html">Français</a>
+            <a href="index.html" class="current">العربية</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 OTR MEDIA LLC. جميع الحقوق محفوظة.</p>
+        <p class="footer__address">30 N Gould St Ste N, Sheridan, WY 82801-6317, USA</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.querySelector(".nav-toggle");
+      var nav = document.getElementById("primary-nav");
+      if (!toggle || !nav) return;
+      toggle.addEventListener("click", function () {
+        var open = nav.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    })();
+  </script>
+</body>
+</html>

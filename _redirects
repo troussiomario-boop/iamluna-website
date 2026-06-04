@@ -1,0 +1,4 @@
+# Optional: auto-redirect based on browser language (Netlify-specific)
+/  /fr/index.html  302  Language=fr
+/  /ar/index.html  302  Language=ar
+/  /index.html     200

@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Luna Marketing Site — Arabic (RTL) overrides
+   Loaded AFTER styles.css on ar/ pages only.
+   Most directional spacing already uses logical properties in styles.css,
+   so this file mainly swaps fonts and re-aligns text for right-to-left.
+   ========================================================================== */
+
+:root {
+  /* Tajawal for all Arabic typography */
+  --font-heading: "Tajawal", "Segoe UI", Tahoma, sans-serif;
+  --font-body: "Tajawal", "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Arabic headings use weight 700, body weight 400 */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-weight: 400;
+}
+
+/* The wordmark is no longer italic serif in Arabic; keep it bold and elegant */
+.brand-mark,
+.hero__wordmark,
+.contact__email {
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Text alignment flips for left-aligned components */
+.badge {
+  text-align: right;
+}
+
+.address {
+  text-align: center;
+}
+
+/* Prose lists already use logical padding-inline-start, so bullets sit correctly.
+   Restore default underline offset direction (no change needed for logical props). */
