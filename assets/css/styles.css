@@ -632,6 +632,20 @@ p {
   box-shadow: 0 10px 24px rgba(45, 27, 78, 0.2);
 }
 
+.signup-form__success {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--deep-purple);
+}
+
+.signup-form__error {
+  flex-basis: 100%;
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  color: #b3261e;
+}
+
 /* ==========================================================================
    Legal / content pages
    ========================================================================== */

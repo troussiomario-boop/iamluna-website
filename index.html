@@ -128,7 +128,7 @@
         <div class="cta-band">
           <h2 class="cta-band__heading">Luna launches soon.</h2>
           <p class="cta-band__subhead">Join the waiting list and be the first to know when we go live.</p>
-          <form class="signup-form" action="mailto:contact@iamluna.app" method="post" enctype="text/plain">
+          <form class="signup-form" id="waitlist-en" data-success="Thanks! We'll notify you at launch." data-error="Something went wrong. Please try again.">
             <label class="skip-link" for="email">Email address</label>
             <input class="signup-form__input" type="email" id="email" name="email" placeholder="you@example.com" required />
             <button class="btn signup-form__button" type="submit">Join the waiting list</button>
@@ -173,6 +173,42 @@
       toggle.addEventListener("click", function () {
         var open = nav.classList.toggle("is-open");
         toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    })();
+  </script>
+  <script>
+    // Waitlist signup -> Brevo (via Netlify Function; API key stays server-side)
+    (function () {
+      var form = document.querySelector(".signup-form");
+      if (!form) return;
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var input = form.querySelector('input[type="email"]');
+        var email = input ? input.value.trim() : "";
+        if (!email) return;
+        var btn = form.querySelector("button");
+        if (btn) btn.disabled = true;
+        var oldErr = form.querySelector(".signup-form__error");
+        if (oldErr) oldErr.remove();
+        fetch("/.netlify/functions/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email })
+        })
+          .then(function (res) {
+            if (!res.ok) throw new Error("request failed");
+            var ok = document.createElement("p");
+            ok.className = "signup-form__success";
+            ok.textContent = form.getAttribute("data-success");
+            form.replaceWith(ok);
+          })
+          .catch(function () {
+            if (btn) btn.disabled = false;
+            var err = document.createElement("p");
+            err.className = "signup-form__error";
+            err.textContent = form.getAttribute("data-error");
+            form.appendChild(err);
+          });
       });
     })();
   </script>
