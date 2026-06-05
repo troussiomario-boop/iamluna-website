@@ -32,7 +32,7 @@ body {
 .companion__title em {
   font-style: normal;
   font-weight: 500;
-  color: var(--brand-pink);
+  color: var(--brand-purple);
 }
 
 /* The values headline is italic white in LTR; keep it upright and bold in AR. */

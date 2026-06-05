@@ -6,18 +6,20 @@
 /* ---------- Design tokens ---------- */
 :root {
   /* Brand palette */
-  --deep-purple: #2E1058;
-  --brand-purple: #450B73;
-  --medium-purple: #6E427A;
+  --deep-purple: #2D1B4E;
+  --brand-purple: #9B72CF;
+  --brand-purple-dark: #8A5FBE;
+  --medium-purple: #6B5B8C;
   --brand-pink: #D77A87;
   --accent-pink: #BC78B8;
-  --light-lavender: #EAD3F5;
+  --light-lavender: #F2EEFA;
   --blush-white: #FBF5FB;
   --warm-cream: #FFFAFB;
 
   /* Semantic text colors */
-  --text-primary: #2E1058;
-  --text-secondary: #6E427A;
+  --text-primary: #2D1B4E;
+  --text-secondary: #6B5B8C;
+  --tertiary-text: #9C95B8;
 
   /* Typography */
   --font-heading: "Fraunces", Georgia, "Times New Roman", serif;
@@ -76,7 +78,7 @@ a {
 }
 
 a:hover {
-  color: var(--accent-pink);
+  color: var(--brand-purple-dark);
 }
 
 h1,
@@ -97,7 +99,7 @@ p {
 .hero__title em,
 .section__heading em {
   font-style: italic;
-  color: var(--brand-pink);
+  color: var(--brand-purple);
 }
 
 /* ---------- Layout helpers ---------- */
@@ -112,12 +114,16 @@ p {
   padding-block: clamp(2.75rem, 5vw, 4.5rem);
 }
 
+.section--tight {
+  padding-block: clamp(2.25rem, 4vw, 3.5rem);
+}
+
 .eyebrow {
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.125em;
-  color: var(--brand-pink);
+  color: var(--brand-purple);
   margin: 0 0 1.25rem;
 }
 
@@ -148,7 +154,7 @@ p {
   background: rgba(255, 250, 251, 0.85);
   backdrop-filter: saturate(180%) blur(12px);
   -webkit-backdrop-filter: saturate(180%) blur(12px);
-  border-bottom: 1px solid rgba(110, 66, 122, 0.08);
+  border-bottom: 1px solid rgba(107, 91, 140, 0.08);
 }
 
 .site-header__inner {
@@ -189,7 +195,7 @@ p {
 .luna-wordmark {
   font-family: "Dancing Script", cursive;
   font-weight: 700;
-  color: var(--brand-pink);
+  color: var(--brand-purple);
   line-height: 1;
   font-style: normal;
 }
@@ -296,9 +302,10 @@ p {
 }
 
 .btn--primary:hover {
+  background: var(--brand-purple-dark);
   color: #fff;
   transform: translateY(-1px);
-  box-shadow: 0 10px 24px rgba(69, 11, 115, 0.25);
+  box-shadow: 0 10px 24px rgba(45, 27, 78, 0.25);
 }
 
 /* ==========================================================================
@@ -332,10 +339,19 @@ p {
   margin: 0 0 1.75rem;
   font-size: clamp(1.05rem, 1.6vw, 1.25rem);
   line-height: 1.6;
-  color: rgba(110, 66, 122, 0.75);
+  color: var(--medium-purple);
 }
 
 /* Call to action: caption + official store badges */
+.store-caption {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  color: var(--medium-purple);
+  margin: 0 0 0.85rem;
+}
+
 .store-badges {
   display: flex;
   gap: 12px;
@@ -372,7 +388,7 @@ p {
   width: clamp(280px, 35vw, 420px);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--light-lavender), var(--brand-pink));
+  background: linear-gradient(135deg, var(--light-lavender), var(--brand-purple));
   opacity: 0.3;
   filter: blur(80px);
 }
@@ -385,7 +401,7 @@ p {
   border-radius: 44px;
   overflow: hidden;
   background: var(--deep-purple);
-  box-shadow: 0 30px 70px rgba(46, 16, 88, 0.32);
+  box-shadow: 0 30px 70px rgba(45, 27, 78, 0.32);
   transform: rotate(-3deg);
 }
 
@@ -420,8 +436,8 @@ p {
 
 .feature--banner {
   grid-column: 1 / -1;
-  background: linear-gradient(120deg, rgba(215, 122, 135, 0.18) 0%, var(--light-lavender) 100%);
-  border-color: rgba(215, 122, 135, 0.25);
+  background: linear-gradient(120deg, rgba(155, 114, 207, 0.18) 0%, var(--light-lavender) 100%);
+  border-color: rgba(155, 114, 207, 0.25);
 }
 
 .feature__icon {
@@ -468,7 +484,7 @@ p {
   border-radius: 50%;
   padding: 20px;
   background: linear-gradient(135deg, var(--light-lavender) 0%, var(--blush-white) 100%);
-  box-shadow: 0 20px 50px rgba(46, 16, 88, 0.18);
+  box-shadow: 0 20px 50px rgba(45, 27, 78, 0.18);
 }
 
 .companion__avatar img {
@@ -488,7 +504,7 @@ p {
 
 .companion__title em {
   font-style: italic;
-  color: var(--brand-pink);
+  color: var(--brand-purple);
 }
 
 .companion__list {
@@ -510,7 +526,7 @@ p {
   content: "\2713";
   position: absolute;
   inset-inline-start: 0;
-  color: var(--brand-pink);
+  color: var(--brand-purple);
   font-weight: 700;
 }
 
@@ -518,7 +534,7 @@ p {
    Values — full-bleed deep purple
    ========================================================================== */
 .values {
-  background: var(--brand-purple);
+  background: var(--deep-purple);
   color: #fff;
   text-align: center;
   padding-block: clamp(3rem, 6vw, 5rem);
@@ -547,9 +563,73 @@ p {
 
 .values__item::before {
   content: "\2713";
-  color: var(--brand-pink);
+  color: var(--brand-purple);
   font-weight: 700;
   margin-inline-end: 0.6rem;
+}
+
+/* ==========================================================================
+   Email signup — soft lavender band (join the waiting list)
+   ========================================================================== */
+.cta-band {
+  background: var(--light-lavender);
+  color: var(--deep-purple);
+  text-align: center;
+  border-radius: 32px;
+  padding: clamp(2.5rem, 5vw, 4rem) 2rem;
+}
+
+.cta-band__heading {
+  color: var(--deep-purple);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 0.5rem;
+}
+
+.cta-band__subhead {
+  color: var(--medium-purple);
+  font-size: 1.15rem;
+  margin: 0 0 2rem;
+}
+
+.signup-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+.signup-form__input {
+  flex: 1 1 240px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid rgba(107, 91, 140, 0.2);
+  border-radius: 999px;
+  background: var(--warm-cream);
+  color: var(--text-primary);
+}
+
+.signup-form__input::placeholder {
+  color: var(--tertiary-text);
+  opacity: 1;
+}
+
+.signup-form__button {
+  flex: 0 0 auto;
+  background: var(--brand-purple);
+  color: #fff;
+  font-weight: 600;
+}
+
+.signup-form__button:hover {
+  background: var(--brand-purple-dark);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(45, 27, 78, 0.2);
 }
 
 /* ==========================================================================
@@ -587,6 +667,7 @@ p {
   font-size: 1.6rem;
   font-weight: 600;
   margin-top: 2.5rem;
+  color: var(--brand-purple);
 }
 
 .prose h3 {
@@ -641,19 +722,19 @@ p {
   margin: 1.5rem 0 1rem;
   padding: 1.25rem 2.5rem;
   background: var(--light-lavender);
-  border: 1px solid rgba(110, 66, 122, 0.15);
+  border: 1px solid rgba(107, 91, 140, 0.15);
   border-radius: var(--radius);
   font-family: var(--font-heading);
   font-style: italic;
   font-size: clamp(1.25rem, 4vw, 1.85rem);
-  color: var(--brand-purple);
+  color: var(--deep-purple);
   transition: transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 .contact__card:hover {
-  color: var(--brand-purple);
+  color: var(--brand-purple-dark);
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(46, 16, 88, 0.15);
+  box-shadow: 0 12px 28px rgba(45, 27, 78, 0.15);
 }
 
 .contact__note {
@@ -788,7 +869,7 @@ p {
     flex-direction: column;
     gap: 0;
     background: var(--warm-cream);
-    border-bottom: 1px solid rgba(110, 66, 122, 0.12);
+    border-bottom: 1px solid rgba(107, 91, 140, 0.12);
     padding: 1rem 1.5rem;
     display: none;
   }
